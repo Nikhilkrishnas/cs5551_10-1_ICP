@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-button full (click)="logout()">Logout</button>
+    <button ion-button full (click)="takePhoto()">Take Picture</button>
+    <img [src]="a" height="50px" width="50px" *ngFor="let a of dataAr"/>
+</ion-content>
