@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="./controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<style>
+#link{
+    margin-top: 40px;
+}
+img{
+    margin-top:10px;
+    height: 500px;
+    width: 100%;
+    object-fit: contain;
+}
+</style>
+<body ng-app="detailsApplication" ng-controller="detailsController" >
+    <div class="col-sm-6 col-sm-offset-3 text-center" id="link" >
+    <form>
+       <label>INSERT URL:</label>
+        <input type="url" ng-model="urllink">
+        <button class="btn btn-info" ng-click="getDetails() {
+            background: #0099cc;
+            color: #ffffff; ">Get Details</button>
+    </form>
+    
+    <div class="image-viewer">
+            <img src="{{imgurl}}" class="img-rounded">
+        </div>
+        <br />
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="x in result">{{x.w3c.name}} :  {{x.w3c.hex}}         Value = {{x.value*100}}              </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
